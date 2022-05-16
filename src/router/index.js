@@ -1,23 +1,60 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
+import App from "@/App.vue"
+import Home from "@/views/Home.vue"
+import Explore from "@/views/Explore.vue"
+import Notifications from "@/views/Notifications.vue"
+import Messages from "@/views/Messages.vue"
+import Bookmarks from "@/views/Bookmarks.vue"
+import Lists from "@/views/Lists.vue"
+import Profile from "@/views/Profile.vue"
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path:'/',
+    redirect:'/home',
+    component:App,
+    name:'App',
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    path:'/home',
+    component:Home,
+    name:'Home',
+  },
+  {
+    path:'/explore',
+    component:Explore,
+    name:'Explore',
+  },
+  {
+    path:'/notifications',
+    component:Notifications,
+    name:'Notifications',
+  },
+  {
+    path:'/messages',
+    component:Messages,
+    name:'Messages',
+  },
+  {
+    path:'/bookmarks',
+    component:Bookmarks,
+    name:'Bookmarks',
+  },
+  {
+    path:'/lists',
+    component:Lists,
+    name:'Lists',
+  },
+  {
+    path:'/profile',
+    component:Profile,
+    name:'Profile',
+  },
+
+
 ]
 
 const router = new VueRouter({

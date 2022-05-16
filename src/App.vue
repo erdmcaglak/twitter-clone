@@ -1,32 +1,55 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+<div>
+  <div class="main-container">
+      <app-menu class="menu"></app-menu>
+      <router-view class="change-side"></router-view>
+      <div><app-trends class="trends"></app-trends></div>
+      
   </div>
+</div>
 </template>
 
+<script>
+import Menu from "@/components/Menu.vue"
+import Trends from "@/components/Trends.vue"
+export default {
+  components:{
+    appMenu:Menu,
+    appTrends:Trends,
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
 }
-
-#nav {
-  padding: 30px;
+html{
+  background-color: #000;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.main-container{
+  width: 1260px;
+  margin:0 auto;
+  
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.menu{
+  width: 260px;
+}
+.trends{
+  width: 400px;
+  position: relative
+}
+.change-side{
+  margin-left: 260px;
+  width: 600px;
 }
 </style>
